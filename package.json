@@ -1,0 +1,17 @@
+{
+  "name": "backend-practice",
+  "version": "1.0.0",
+  "description": "An internship project to familarise and get acquainted with essential backend development tools and technologies, understand their individual purposes, and demonstrate basic proficiency in setting up and running a Node.js backend environment.",
+  "license": "ISC",
+  "author": "Abraham Nkonduok",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "mongoose": "^9.12.3"
+  }
+}
