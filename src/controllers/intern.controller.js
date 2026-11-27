@@ -20,7 +20,13 @@ export const getAllInternscontroller = async (req, res) => {
             InternsRecord: retrievedInterns
          })
     }catch(error) {
-        throw new Error("Error retrieving interns:", error)
+        console.error(error.message)
+
+        const statusCode = error.message === "No Intern Found" ? 404 : 500
+        res.status(statusCode).json({
+            success: false,
+            message: error.message || "Error with the server"
+        })
     }
 };
 
@@ -48,7 +54,13 @@ export const addInternDataController = async(req, res) => {
         })
 
 
-    }catch(error) {
-        throw new Error("Error adding intern data");
+    } catch(error) {
+        console.error(error.message)
+
+        const statusCode = error.message === "Intern with this email already exists" ? 409 : 500
+        res.status(statusCode).json({
+            success: false,
+            message: error.message || "Error with the server"
+        })
     }
 };
